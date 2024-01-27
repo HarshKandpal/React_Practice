@@ -4,8 +4,8 @@ function TodoMain() {
        const {Todo,editTodo,deleteTodo,toggleTodo}=useTodo()
        
   return (
-    <div className='bg-orange-400'>
-        {Todo.map((ele)=>(<div>
+    <div className='flex justify-center bg-orange-400'>
+        {Todo.map((ele)=>(<div key={ele.id}>
             {ele.Todomsg}
         </div>))}
         

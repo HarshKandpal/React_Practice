@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Todoform from './components/Todoform'
+import TodoForm from './components/Todoform'
 import TodoMain from './components/TodoMain'
 import TodoContext from './context/TodoContext'
 
@@ -25,9 +25,9 @@ function App() {
     <>
     <TodoContext.Provider value={{Todo,addTodo,editTodo,deleteTodo,toggleTodo}}>
       <div className='bg-color-orange'>
-          <h1 className='font-bold text-orange-500'>Manage Your todo</h1>
+          <h1 className='font-bold text-green-500'>Manage Your todo</h1>
          <div className='py-4'>
-          <Todoform/>
+          <TodoForm/>
           <TodoMain/>
          </div>
       </div>
