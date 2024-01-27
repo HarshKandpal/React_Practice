@@ -23,11 +23,10 @@ function App() {
      }
   return (
     <>
-    
     <TodoContext.Provider value={{Todo,addTodo,editTodo,deleteTodo,toggleTodo}}>
-      <div>
-      <h1>hello</h1>
-         <div>
+      <div className='bg-color-orange'>
+          <h1 className='font-bold text-orange-500'>Manage Your todo</h1>
+         <div className='py-4'>
           <Todoform/>
           <TodoMain/>
          </div>

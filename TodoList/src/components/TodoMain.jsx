@@ -4,7 +4,7 @@ function TodoMain() {
        const {Todo,editTodo,deleteTodo,toggleTodo}=useTodo()
        
   return (
-    <div>
+    <div className='bg-orange-400'>
         {Todo.map((ele)=>(<div>
             {ele.Todomsg}
         </div>))}
