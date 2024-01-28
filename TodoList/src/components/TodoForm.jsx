@@ -6,23 +6,23 @@ import {useTodo} from '../context/TodoContext'
 function TodoForm() {
     const [Todo, setTodo]=useState("")
     const {addTodo}=useTodo()
-    const handleSubmit=()=>{
-      e.preventDefault()
-
-      if (!todo) return
+    const handleSubmit=(e)=>{
+      e.preventDefault();
+      if(!Todo)
+        return false
         addTodo(Date.now(),Todo)
         setTodo("")
     }
   return (
     <>
-    <div className='flex justify-center'>
+    <div className='w-full flex justify-center mt-10'>
             <input type="text"
             value={Todo}
-            placeholder="Enter msg"
+            placeholder="Write todo..."
             onChange={(e)=>setTodo(e.target.value)}
-            className=" border border-black/10 outline-none"/>
+            className="w-6/12 ml-28 px-3 rounded-lg border mr-2  focus:border-gray-400 focus:outline-none"/>
             <button onClick={handleSubmit} 
-            className="rounded px-2 py-1 bg-orange-600 text-white">Click</button>
+            className=" w-1/12 bg-green-500 rounded-lg px-2 py-1 text-white hover:bg-green-600">Click</button>
     </div>
     </>
   )

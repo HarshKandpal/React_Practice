@@ -19,18 +19,21 @@ function App() {
         setTodo((prev)=>(prev.filter((item)=>(item.id!=id))))
      }
      const toggleTodo=(id)=>{
-      setTodo((prev)=>(prev.map((item)=>(item.id===id? !item.completed:item))))
+      setTodo((prev)=>(prev.map((item)=>(item.id===id? {...item,completed:!item.completed}:item))))
      }
   return (
     <>
     <TodoContext.Provider value={{Todo,addTodo,editTodo,deleteTodo,toggleTodo}}>
-      <div className='bg-color-orange'>
-          <h1 className='font-bold text-green-500'>Manage Your todo</h1>
-         <div className='py-4'>
+
+        <div className='w-full flex flex-col items-center py-5'>
+         <h1 className='font-bold pt-4 mb-3'>Manage Your todo</h1>
           <TodoForm/>
           <TodoMain/>
-         </div>
-      </div>
+          </div>
+          {/* <div className='mt-3'>
+          <TodoMain/>
+          </div> */}
+         
     </TodoContext.Provider>
     </>
   )
